@@ -15,6 +15,18 @@ PODS:
     - hermes-engine/Pre-built (= 0.73.2-0)
   - hermes-engine/Pre-built (0.73.2-0)
   - libevent (2.1.12.1)
+  - libwebp (1.3.2):
+    - libwebp/demux (= 1.3.2)
+    - libwebp/mux (= 1.3.2)
+    - libwebp/sharpyuv (= 1.3.2)
+    - libwebp/webp (= 1.3.2)
+  - libwebp/demux (1.3.2):
+    - libwebp/webp
+  - libwebp/mux (1.3.2):
+    - libwebp/demux
+  - libwebp/sharpyuv (1.3.2)
+  - libwebp/webp (1.3.2):
+    - libwebp/sharpyuv
   - RCT-Folly (2022.05.16.00):
     - boost
     - DoubleConversion
@@ -871,6 +883,8 @@ PODS:
   - React-Mapbuffer (0.73.2-0):
     - glog
     - React-debug
+  - react-native-safe-area-context (4.8.2):
+    - React-Core
   - React-nativeconfig (0.73.2-0)
   - React-NativeModulesApple (0.73.2-0):
     - glog
@@ -1031,6 +1045,24 @@ PODS:
     - React-jsi (= 0.73.2-0)
     - React-logger (= 0.73.2-0)
     - React-perflogger (= 0.73.2-0)
+  - RNFastImage (8.6.3):
+    - React-Core
+    - SDWebImage (~> 5.11.1)
+    - SDWebImageWebPCoder (~> 0.8.4)
+  - RNGestureHandler (2.17.1):
+    - glog
+    - RCT-Folly (= 2022.05.16.00)
+    - React-Core
+  - RNScreens (3.29.0):
+    - glog
+    - RCT-Folly (= 2022.05.16.00)
+    - React-Core
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+  - SDWebImageWebPCoder (0.8.5):
+    - libwebp (~> 1.0)
+    - SDWebImage/Core (~> 5.10)
   - SocketRocket (0.6.1)
   - Yoga (1.14.0)
 
@@ -1066,6 +1098,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector-modern`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-nativeconfig (from `../node_modules/react-native/ReactCommon`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -1085,12 +1118,18 @@ DEPENDENCIES:
   - React-runtimescheduler (from `../node_modules/react-native/ReactCommon/react/renderer/runtimescheduler`)
   - React-utils (from `../node_modules/react-native/ReactCommon/react/utils`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNFastImage (from `../node_modules/react-native-fast-image`)
+  - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   https://github.com/react-native-tvos/react-native-tvos-podspecs.git:
     - libevent
   trunk:
+    - libwebp
+    - SDWebImage
+    - SDWebImageWebPCoder
     - SocketRocket
 
 EXTERNAL SOURCES:
@@ -1151,6 +1190,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   React-Mapbuffer:
     :path: "../node_modules/react-native/ReactCommon"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
   React-nativeconfig:
     :path: "../node_modules/react-native/ReactCommon"
   React-NativeModulesApple:
@@ -1189,6 +1230,12 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/utils"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNFastImage:
+    :path: "../node_modules/react-native-fast-image"
+  RNGestureHandler:
+    :path: "../node_modules/react-native-gesture-handler"
+  RNScreens:
+    :path: "../node_modules/react-native-screens"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -1201,6 +1248,7 @@ SPEC CHECKSUMS:
   glog: f0ddebfc00a905e9213e37801095a0a705d2e5f6
   hermes-engine: 29bb8a729586679ee5ff576bcd8a1e0291e9ed65
   libevent: a6d75fcd7be07cbc5070300ea8dbc8d55dfab88e
+  libwebp: 1786c9f4ff8a279e4dac1e8f385004d5fc253009
   RCT-Folly: 46220aef278c0f21b248ba3d60d26d2f64bb36e9
   RCTRequired: a7406ea680bd1ddd390e4589dd51333fca278b2f
   RCTTypeSafety: 44a799634b7ef207d56d0a4921015206f0232183
@@ -1222,6 +1270,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 4e379431c5175ffaccf2108e4de18887ad44ca98
   React-logger: 0631dfa1c51a2c9c5fd8c4aec19ddc0c8ea3721b
   React-Mapbuffer: 91bb3b7358069eb72a961babdd0298a3f1143153
+  react-native-safe-area-context: 0ee144a6170530ccc37a0fd9388e28d06f516a89
   React-nativeconfig: 42117ed80599c0a718389f68d6a3787e3d05f1dc
   React-NativeModulesApple: 349818ab2f2cb2a87832569100cdf510ea7fb7bf
   React-perflogger: 907db225016d4c2ceafc6ac007f0853cff237546
@@ -1241,6 +1290,11 @@ SPEC CHECKSUMS:
   React-runtimescheduler: 8274a1bd8dbe0debd6b14cb57730462e50b434de
   React-utils: 761cab5e6ea0177b9027f63175656ff7381d3d4f
   ReactCommon: 77d77b33653d8538130d5c7dd1975e90da3fc74c
+  RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
+  RNGestureHandler: 1c2341f8a84794a483ed739c446dc9f3b5191908
+  RNScreens: b582cb834dc4133307562e930e8fa914b8c04ef2
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SDWebImageWebPCoder: 908b83b6adda48effe7667cd2b7f78c897e5111d
   SocketRocket: f32cd54efbe0f095c4d7594881e52619cfe80b17
   Yoga: 0c442268d7b2bd36c9b51297f514eee1392ab2a1
 

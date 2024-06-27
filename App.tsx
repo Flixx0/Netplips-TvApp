@@ -1,10 +1,22 @@
-import { MainStackNavigator } from "@navigators/MainStackNavigator";
-import { NavigationContainer } from "@react-navigation/native";
+import { ThemeProvider } from '@contexts/ThemeContext';
+import { theme } from '@contexts/themeValues';
+import { MainStackNavigator } from '@navigators/MainStackNavigator';
+import { DefaultTheme, NavigationContainer } from '@react-navigation/native';
 
 const App = () => {
+  const navTheme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: theme.colors.dark,
+    },
+  };
+
   return (
-    <NavigationContainer>
-      <MainStackNavigator />
+    <NavigationContainer theme={navTheme}>
+      <ThemeProvider>
+        <MainStackNavigator />
+      </ThemeProvider>
     </NavigationContainer>
   );
 };

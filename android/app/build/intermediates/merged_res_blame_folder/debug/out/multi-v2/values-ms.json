@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.testapp-mergeDebugResources-31:/values-ms/values-ms.xml",
+            "outputFile": "com.testapp-mergeDebugResources-32:/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "/Users/joel/.gradle/caches/transforms-3/c58e5b2ec0a5c53e9411ad54e24fe0da/transformed/jetified-react-android-0.73.2-0-debug/res/values-ms/values-ms.xml",

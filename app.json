@@ -1,4 +1,16 @@
 {
   "name": "TestApp",
-  "displayName": "TestApp"
+  "displayName": "Netplips",
+  "expo": {
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Netflix Sans Medium.otf"
+          ]
+        }
+      ]
+    ]
+  }
 }
